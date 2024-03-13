@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Acadêmico - IFPB</title>
+</head>
+<style>
+    div > div{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        background-color: white;
+    }
+    body{
+        font-family: Arial, sans-serif;
+        background-color: black;
+    }
+</style>
+<body>
+
+    <div style="display: flex; justify-content: space-around; gap: 20px;">
+        <div>
+            <h1>Cadastro de Alunos</h1>
+            Nome:<input id="nome"><br>
+            Idade:<input id="idade" type="number"><br>
+            Matrícula:<input id="matricula"><br>
+            <button onclick="alunoControlador.inserir()">Cadastrar</button>
+            <ol id="listaAlunos"></ol>
+        </div>
+
+        <div>
+            <h1>Cadastro de Disciplinas</h1>
+            Código:<input id="codigo"><br>
+            Nome:<input id="nomeDisciplina"><br>
+            <button onclick="disciplinaControlador.inserir()">Cadastrar</button>
+            <ol id="listaDisciplinas"></ol>
+        </div>
+
+        <div>
+            <h1>Inserir Aluno na Disciplina</h1>
+            Matrícula do Aluno:<input id="alunoMatricula"><br>
+            Código da Disciplina:<input id="disciplinaCodigo"><br>
+            <button onclick="disciplinaControlador.inserirAluno()">Inserir</button>
+        </div>
+
+        <div>
+            <h1>Alunos por Disciplina</h1>
+            Código da Disciplina:<input id="disciplinaCodigoConsulta"><br>
+            <button onclick="disciplinaControlador.listarAlunos()">Consultar</button>
+            <ol id="listaAlunosDisciplina"></ol>
+        </div>
+    </div>
+    
+    <script src="modelo/aluno.js"></script>
+    <script src="repositorio/aluno_repositorio.js"></script>
+    <script src="servico/aluno_service.js"></script>
+    <script src="controlador/aluno_controlador.js"></script>
+
+    <script src="modelo/disciplina.js"></script>
+    <script src="repositorio/disciplina_repositorio.js"></script>
+    <script src="servico/disciplina_service.js"></script>
+    <script src="controlador/disciplina_controlador.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
